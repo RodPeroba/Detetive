@@ -1,11 +1,12 @@
 package Modal;
 
-public class Arma extends Carta {
-
-	Arma(String value){
-		super(value);
-	}
-	{
-		tipo = 1;
+public class Arma {
+	
+	String nome;
+	Casa coordenada;
+	
+	Arma(String nome, Casa coordenada){
+		this.nome = nome;
+		this.coordenada = coordenada;
 	}
 }

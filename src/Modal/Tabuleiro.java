@@ -6,8 +6,12 @@ public class Tabuleiro {
 	static String suspeito = "Fulano";
 	static String arma = "Faca";
 	static String comodo = "Cozinha";
+	static Casa tabuleiro [][] = new Casa [10][10];
+
+	Tabuleiro (){
+		
+		}
 	
-	Tabuleiro (){}
 
 	protected static String getSuspeito() {
 		return suspeito;
