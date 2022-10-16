@@ -4,6 +4,7 @@ public class Jogador {
 	
 	Casa posicao;
 	String personagem;
+	Carta mao [] ;
 	
 	Jogador(String personagem,Casa posicao){
 		
@@ -13,7 +14,7 @@ public class Jogador {
 	}
 	
 	public void darPalpite(String suspeito, String arma, String comodo) {
-		//Pensar onde vai ficar os dados, interacao entre jogadores	
+		//Mostrar na tela as cartas do palpite
 	}
 	
 	public void move(int x,int y) {
