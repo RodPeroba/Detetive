@@ -4,25 +4,30 @@ public class Jogador {
 	
 	Casa posicao;
 	String personagem;
-	Carta mao [] ;
+	// Casa 
 	
 	Jogador(String personagem,Casa posicao){
 		
 		this.personagem = personagem;
 		this.posicao = posicao;
+		// this.posicao_rodada_anterior = posicao;
+		// this.cartas ... 
+		// this.flag_ativo = flag;
 		
 	}
-	
-	public void darPalpite(String suspeito, String arma, String comodo) {
-		//Mostrar na tela as cartas do palpite
-	}
+
 	
 	public void move(int x,int y) {
 		posicao.move(x, y);
 	}
 	
 	public int jogaDado() {
-		return Dado.rolaDado();
+		return Dado.rolaDados();
+	}
+	
+	
+	public void darPalpite(String suspeito, String arma, String comodo) {
+		//Pensar onde vai ficar os dados, interacao entre jogadores
 	}
 	
 	boolean fazerAcusacao(String suspeito, String arma, String comodo) {

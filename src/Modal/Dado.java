@@ -6,8 +6,8 @@ public class Dado {
 	static Random rand = new Random();
 	static int limiteDoDado = 6;
 	
-	static int rolaDado() {
-		return rand.nextInt(limiteDoDado) + 1;
+	static int rolaDados() {
+		return (rand.nextInt(limiteDoDado) + 1) + (rand.nextInt(limiteDoDado) + 1);
 	}
 	
 	
