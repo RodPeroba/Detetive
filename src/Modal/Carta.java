@@ -1,17 +1,23 @@
 package Modal;
 
-public abstract class Carta {
+public class Carta {
+
+	private int tipo; // tipo 0 = arma *** tipo 1 = personagem *** tipo 2 = comodo
+	private String value;
 	
-	int tipo;
-	String value;
-	
-	Carta(String value){
+	protected Carta(String value, int tipo){
 		
 		this.value = value;
+		this.tipo = tipo;
 		
 	}
 	
 	public String getValue() {
 		return value;
+	}
+	
+	protected int getTipo() {
+		return tipo;
+				
 	}
 }

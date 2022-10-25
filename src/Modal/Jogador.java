@@ -1,15 +1,19 @@
 package Modal;
 
+import java.util.ArrayList;
+
 public class Jogador {
 	
 	Casa posicao;
 	String personagem;
-	Carta mao [] ;
+	ArrayList<Carta> mao = null;
+	Tabuleiro tabuleiro = null;
 	
 	Jogador(String personagem,Casa posicao){
 		
 		this.personagem = personagem;
 		this.posicao = posicao;
+		tabuleiro = Tabuleiro.getTabuleiro();
 		
 	}
 	
@@ -22,18 +26,19 @@ public class Jogador {
 	}
 	
 	public int jogaDado() {
-		return Dado.rolaDado();
+		Dado.rolaDado();
+		return Dado.valorDoDado;
 	}
 	
 	boolean fazerAcusacao(String suspeito, String arma, String comodo) {
 
-		String verdadeiroSuspeito = Tabuleiro.getSuspeito();
-		String verdadeiraArma = Tabuleiro.getArma();
-		String verdadeiroComodo = Tabuleiro.getComodo();
+		Carta verdadeiroSuspeito = tabuleiro.getSuspeito();
+		Carta verdadeiraArma = tabuleiro.getArma();
+		Carta verdadeiroComodo = tabuleiro.getComodo();
 		
-		if (suspeito == verdadeiroSuspeito)
-			if (arma == verdadeiraArma)
-				if(comodo == verdadeiroComodo)
+		if (suspeito == verdadeiroSuspeito.getValue())
+			if (arma == verdadeiraArma.getValue())
+				if(comodo == verdadeiroComodo.getValue())
 					return true;
 		
 		return false;
