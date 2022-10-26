@@ -4,10 +4,9 @@ import java.util.ArrayList;
 
 public class Tabuleiro {
 	
-	//TODO gerar as armas aleatoriamento
-	private Carta arma = new Carta ("Arma",0);
-	private Carta suspeito = new Carta ("Fulano",1);
-	private Carta comodo = new Carta ("Comodo",2);
+	//private Carta arma = new Carta ("Arma",0);
+	//private Carta suspeito = new Carta ("Fulano",1);
+	//private Carta comodo = new Carta ("Comodo",2);
 	private ArrayList<Carta> envelope = null;
 	private static Tabuleiro tabuleiro = null;
 	private Tabuleiro (){}
@@ -25,19 +24,34 @@ public class Tabuleiro {
 	}
 		
 	protected Carta getSuspeito() {
-		return suspeito;
+		for (int i = 0; i < envelope.size();i++) {
+			if (envelope.get(i).getTipo() == 1)
+				return envelope.get(i);
+		}
+		return null;
 	}
 
 	protected Carta getArma() {
-		return arma;
+		for (int i = 0; i < envelope.size();i++) {
+			if (envelope.get(i).getTipo() == 0)
+				return envelope.get(i);
+		}
+		return null;
 	}
 
 	protected Carta getComodo() {
-		return comodo;
+		for (int i = 0; i < envelope.size();i++) {
+			if (envelope.get(i).getTipo() == 2)
+				return envelope.get(i);
+		}
+		return null;
 	}
 
 	public void AdicionaAoEnvelope(Carta novaCarta) {
+		if (envelope ==null)
+			envelope = new ArrayList<Carta>();
 		envelope.add(novaCarta);
+		System.out.println("Carta adicionada ao envelope -> " + novaCarta.getValue());
 		//TODO Ordenar ???
 		// acho q ja vai ordenar sozinho -Rodrigo
 	}

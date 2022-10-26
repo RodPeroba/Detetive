@@ -6,7 +6,7 @@ public class Jogador {
 	
 	Casa posicao;
 	String personagem;
-	ArrayList<Carta> mao = null;
+	ArrayList<Carta> mao = new ArrayList<Carta>();
 	Tabuleiro tabuleiro = null;
 	
 	Jogador(String personagem,Casa posicao){
@@ -43,4 +43,6 @@ public class Jogador {
 		
 		return false;
 	}
+
+	
 }

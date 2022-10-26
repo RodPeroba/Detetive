@@ -2,6 +2,7 @@ package Modal;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 
 public class ModalManager {
 	
@@ -9,15 +10,28 @@ public class ModalManager {
 	Tabuleiro tabuleiro = Tabuleiro.getTabuleiro();
 	ArrayList<Carta> cartas = new ArrayList<Carta>();
 	int numJogadores;
+	ArrayList<Jogador> jogadores; 
 	
 	private ModalManager(int numJogadores){
 		
 		this.numJogadores = numJogadores;
-		
+		jogadores = new ArrayList<Jogador>();
+		for(int i = 0;i < numJogadores;i++)
+			jogadores.add(new Jogador("Fulano",null));///TODO trocar isso, talvez tirar a casa como requerimento pra criar o objeto
 		CreateDeck();
 		Collections.shuffle(cartas);
 		SeparaEnvelope();
 		SeparaMao();
+		//Exibindo o evelope para debug
+		System.out.println("Arma do crime -> " + tabuleiro.getArma().getValue());
+		System.out.println("Meliante -> " + tabuleiro.getSuspeito().getValue());
+		System.out.println("Local do crime -> " + tabuleiro.getComodo().getValue());
+		for(int i = 0;i < jogadores.size();i++) {
+			System.out.println("Cartas do jogador " + i);
+			for (int j = 0;j < jogadores.get(i).mao.size(); j++) {
+				System.out.println(jogadores.get(i).mao.get(j).getValue());
+			}
+		}
 	}
 	
 	public static ModalManager getModalManager(int numJogadores) {
@@ -70,6 +84,17 @@ public class ModalManager {
 		}
 	}
 	protected void SeparaMao() {
-		//TODO tudo
+		//Assume baralho embaralhado
+		//Em vez de assumir isso, n poderia so embaralhar e 
+		//to nem ai pra eficiencia ? - Rodrigo
+		int contador = 0;
+		while(cartas.isEmpty() == false) {
+			jogadores.get(contador).mao.add(cartas.get(0));
+			cartas.remove(0);
+			contador++;
+			if (contador >= numJogadores)
+				contador = 0;
+		}
+		System.out.println("Cartas distribuidas");
 	}
 }
