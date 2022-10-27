@@ -5,9 +5,11 @@ import java.util.Random;
 public class Dado {
 	static Random rand = new Random();
 	static int limiteDoDado = 6;
-	static int valorDoDado = -1;
+	static int valorDoDado1 = -1;
+	static int valorDoDado2 = -1;
 	static void rolaDado() {//rola 2 dados
-		valorDoDado =  rand.nextInt(limiteDoDado) + rand.nextInt(limiteDoDado) + 2 ;
+		valorDoDado1 = rand.nextInt(limiteDoDado) + 1 ;
+		valorDoDado2 = rand.nextInt(limiteDoDado) + 1 ;
 	}
 	
 	
