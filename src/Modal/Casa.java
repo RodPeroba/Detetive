@@ -22,6 +22,7 @@ class Casa {
 		this.isWalkable = isWalkable;
 		this.comodo = comodo;
 	}
+
 	protected int getX(){
 		return x;
 	}
