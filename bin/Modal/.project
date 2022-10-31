@@ -1,19 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-<<<<<<< Updated upstream
-	<name>bin</name>
-=======
 	<name>Modal</name>
->>>>>>> Stashed changes
 	<comment></comment>
 	<projects>
 	</projects>
 	<buildSpec>
-<<<<<<< Updated upstream
-	</buildSpec>
-	<natures>
-	</natures>
-=======
 		<buildCommand>
 			<name>org.eclipse.jdt.core.javabuilder</name>
 			<arguments>
@@ -34,5 +25,4 @@
 			</matcher>
 		</filter>
 	</filteredResources>
->>>>>>> Stashed changes
 </projectDescription>
