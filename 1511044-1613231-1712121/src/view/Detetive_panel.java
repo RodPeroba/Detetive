@@ -1,8 +1,10 @@
 package view;
 
 import javax.imageio.ImageIO;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 import java.io.File;
 import java.io.IOException;
 
@@ -88,6 +90,12 @@ public class Detetive_panel extends JPanel { // MyDrawImagePanel
 		p.setLayout(null);
 		
 		JButton button_chose_die_value = new JButton("Escolher Valor dos dados");
+		button_chose_die_value.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ForcedDicePanel meuPainel = new ForcedDicePanel("Escolha um dado!");
+				meuPainel.setVisible(true);
+			}
+		});
 		JButton button_throw_die = new JButton("Jogar dados");
 		JButton button_secret_passage = new JButton("Usar passagem secreta");
 		JButton button_show_hand = new JButton("Mostrar cartas da mão");
@@ -119,7 +127,12 @@ public class Detetive_panel extends JPanel { // MyDrawImagePanel
 		
 		return p;
 	}
-	
+	public static JPanel choose_dice() {
+		JPanel p = new Detetive_panel();
+		p.setPreferredSize(new Dimension (400,500));
+		p.setLayout(null);
+		return p;
+	}
 	public static JPanel hand_panel() {
 		flag_drawimg = 3;
 		

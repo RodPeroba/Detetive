@@ -10,7 +10,7 @@ public class main {
 	
 	public static void main(String[] args) {
 		System.out.println("Hello World!");
-		ModalManager meuManager = ModalManager.getModalManager(numJogadores);
+		ModalManager meuManager = ModalManager.getModalManager();
 		
 		System.out.println("Terminando");
 		
@@ -23,9 +23,9 @@ public class main {
 		// frame do tabuleiro precisa implementar a parte da cor do jogador dependendo de quem é o turno. versao atual apenas para testes
 		// tabuleiro tambem precisa ajustar os botoes para selecionar valor no dado
 		
-		frame = Detetive_frame.frame_start_menu();
+//		frame = Detetive_frame.frame_start_menu();
 //		frame = Detetive_frame.frame_character_select();
-//		frame = Detetive_frame.frame_board();
+		frame = Detetive_frame.frame_board();
 //		frame = Detetive_frame.frame_hand();
 //		frame = Detetive_frame.frame_notebook();
 		
