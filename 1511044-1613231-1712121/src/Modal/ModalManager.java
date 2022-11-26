@@ -8,7 +8,7 @@ public class ModalManager {
 	private static ModalManager controle = null;
 	Tabuleiro tabuleiro = Tabuleiro.getTabuleiro();
 	ArrayList<Carta> cartas = new ArrayList<Carta>();
-	int numJogadores;
+	int numJogadores = 0;
 	ArrayList<Jogador> jogadores; 
 	
 	private ModalManager(int numJogadores){
@@ -33,8 +33,9 @@ public class ModalManager {
 		}
 	}
 	
-	public static ModalManager getModalManager(int numJogadores) {
-		if (controle == null) {
+	public static ModalManager getModalManager() {
+		if (controle == null) { 
+			int numJogadores = 3;
 			controle = new ModalManager(numJogadores);
 		}
 		return controle;

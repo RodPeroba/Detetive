@@ -9,6 +9,7 @@ public class Jogador {//TODO provavelmente vai implementar um listener para quan
 	ArrayList<Carta> mao = new ArrayList<Carta>();
 	Tabuleiro tabuleiro = null;
 	Comodo comodo = null;
+	Dado dado =  Dado.getDado();
 	
 	Jogador(String personagem,Casa posicao){
 		
@@ -54,7 +55,7 @@ public class Jogador {//TODO provavelmente vai implementar um listener para quan
 	}
 	
 	public int jogaDado() {
-		Dado.rolaDado();
+		dado.rolaDado();
 		return Dado.valorDoDado1 + Dado.valorDoDado2;
 	}
 	
